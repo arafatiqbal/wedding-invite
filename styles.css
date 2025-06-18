@@ -1,0 +1,351 @@
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+.invite-bg {
+  background: #1a2e1a !important;
+  min-height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Flower decorations in corners */
+.flower {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  object-fit: contain;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.9;
+  filter: brightness(1.1) contrast(1.1);
+  max-width: none; /* Ensure no max-width constraints */
+}
+
+.flower-top-right {
+  top: -10px;
+  right: -10px;
+  width: 300px;
+  height: 300px;
+}
+
+.flower-bottom-left {
+  bottom: -10px;
+  left: -10px;
+  width: 300px;
+  height: 300px;
+}
+
+/* Floral Corners (use SVG/PNG or placeholder) */
+.floral {
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0.85;
+}
+.floral-top-left {
+  top: 0;
+  left: 0;
+  background-image: url("https://svgshare.com/i/16kz.svg"); /* Placeholder, swap for your own */
+}
+.floral-top-right {
+  top: 0;
+  right: 0;
+  background-image: url("https://svgshare.com/i/16kz.svg");
+  transform: scaleX(-1);
+}
+.floral-bottom-left {
+  bottom: 0;
+  left: 0;
+  background-image: url("https://svgshare.com/i/16kz.svg");
+  transform: scaleY(-1);
+}
+
+.invite-card {
+  background: transparent;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 30px;
+  max-width: 480px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #ffffff;
+  font-family: "Playfair Display", serif;
+  text-align: center;
+  position: relative;
+  border: none;
+}
+
+/* Remove all border and corner decoration styles */
+.invite-card::before,
+.invite-card::after,
+.invite-card .corner-decoration,
+.invite-card .corner-decoration.top-left,
+.invite-card .corner-decoration.top-right,
+.invite-card .corner-decoration.bottom-left,
+.invite-card .corner-decoration.bottom-right {
+  display: none !important;
+}
+
+.bismillah-img {
+  display: block;
+  max-width: 80%;
+  width: 100%;
+}
+
+/* Remove .bismillah-arabic style if not needed */
+.bismillah-arabic {
+  display: none !important;
+}
+
+/* Remove unused bismillah-latin and bismillah-svg styles */
+.bismillah-latin,
+.bismillah-svg {
+  display: none !important;
+}
+
+.invite-names {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2em;
+  margin-bottom: 18px;
+}
+.name {
+  font-family: "Playfair Display", serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #ffffff;
+}
+.and {
+  font-family: "Great Vibes", cursive;
+  font-size: 2.1rem;
+  color: #ffffff;
+  margin: 0.2em 0;
+  font-style: italic;
+}
+.invite-details {
+  font-family: "Playfair Display", serif;
+  color: #ffffff;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5em;
+}
+.invite-sub {
+  font-size: 1.3rem;
+  font-style: italic;
+  margin-bottom: 0.5em;
+}
+.invite-date {
+  font-size: 3.2rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+.invite-month {
+  font-size: 1.5rem;
+  letter-spacing: 0.2em;
+}
+.invite-time {
+  font-size: 1.5rem;
+  font-style: italic;
+}
+.invite-venue {
+  font-size: 1.2rem;
+  margin-top: 0.5em;
+  line-height: 1.5;
+}
+
+/* Remove corner styles */
+.corner,
+.corner-top-left,
+.corner-bottom-right {
+  display: none !important;
+}
+
+/* Remove RSVP and other unused styles */
+.rsvp-section,
+.rsvp-title,
+.form-container,
+.rsvp-note,
+.invite-header,
+.details-row,
+.details-date,
+.details-location,
+.details-reception,
+.ampersand,
+.name-script {
+  display: none !important;
+}
+
+@media (max-width: 600px) {
+  body,
+  .invite-bg {
+    align-items: flex-start;
+    /* min-height: 100vh; */
+  }
+
+  .corner {
+    width: 120px;
+    height: 120px;
+  }
+
+  /* Responsive flower sizing for mobile */
+  .flower {
+    width: 150px;
+    height: 150px;
+    z-index: 999;
+  }
+
+  .flower-top-right {
+    width: 150px;
+    height: 150px;
+    top: -5px;
+    right: -5px;
+    position: absolute;
+  }
+
+  .flower-bottom-left {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    bottom: -10px;
+    left: -5px;
+  }
+
+  .invite-card {
+    margin-top: 100px;
+    max-width: 98vw;
+  }
+  .bismillah-svg svg {
+    width: 60px;
+    height: 40px;
+  }
+  .name {
+    font-size: 2.2rem;
+  }
+  .and {
+    font-size: 1.8rem;
+  }
+  .invite-date {
+    font-size: 2.4rem;
+  }
+  .invite-month {
+    font-size: 1.3rem;
+  }
+  .invite-time {
+    font-size: 1.3rem;
+  }
+  .invite-venue {
+    font-size: 1.1rem;
+  }
+}
+
+/* Footer */
+.footer {
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+  color: white;
+  text-align: center;
+  padding: 60px 24px;
+  border-radius: 24px 24px 0 0;
+  margin-top: 60px;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+      circle at 20% 80%,
+      rgba(255, 255, 255, 0.1) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(255, 255, 255, 0.1) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 40% 40%,
+      rgba(255, 255, 255, 0.05) 0%,
+      transparent 50%
+    );
+}
+
+.footer-content {
+  position: relative;
+  z-index: 1;
+}
+
+.footer-content p {
+  margin-bottom: 12px;
+  opacity: 0.95;
+  font-weight: 400;
+}
+
+/* Animation for page load */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.invite-card {
+  animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Modern scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #059669;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #047857;
+}

@@ -432,16 +432,32 @@ html {
   transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   opacity: 0;
   transform: translateY(20px);
-  /* width: 100%; */
-  max-width: 800px;
+  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
+  width: 100%;
 }
 
 .rsvp-form-container iframe {
   border-radius: 12px;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-  width: 100vw;
+  width: 100%;
   height: auto;
   min-height: 548px;
+}
+
+.checkmark-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.rsvp-form-container {
+  max-width: 125vw;
+  margin-top: 20px;
+}
+
+.rsvp-form-container iframe {
+  width: 100vw;
+  min-height: 1000px;
+  border-radius: 10px;
 }

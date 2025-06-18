@@ -41,8 +41,76 @@
           <div class="invite-venue">
             Tandoor Cuisine of India<br />1132 E Katella Ave, Orange, CA 92867
           </div>
+          <div class="rsvp-text">Please RSVP</div>
+          <button class="rsvp-button" onclick="showRSVPForm()">
+            <svg
+              class="checkmark-icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"
+                fill="currentColor"
+              />
+            </svg>
+            I'm Attending
+          </button>
+          <div
+            id="rsvp-form-container"
+            class="rsvp-form-container"
+            style="display: none"
+          >
+            <iframe
+              src="https://docs.google.com/forms/d/e/1FAIpQLSdXADYPxxfjlqduM6P6TXHps7B7GPhlPS1jhY-xNq4ux5Z7_w/viewform?embedded=true"
+              width="1000"
+              height="1000"
+              frameborder="0"
+              marginheight="0"
+              marginwidth="0"
+              >Loading…</iframe
+            >
+          </div>
         </div>
       </main>
     </div>
+
+    <script>
+      function showRSVPForm() {
+        const formContainer = document.getElementById("rsvp-form-container");
+        const button = document.querySelector(".rsvp-button");
+
+        // Hide the button
+        button.style.display = "none";
+
+        // Show the form with a smooth animation
+        formContainer.style.display = "block";
+        formContainer.style.opacity = "0";
+        formContainer.style.transform = "translateY(20px)";
+
+        setTimeout(() => {
+          formContainer.style.opacity = "1";
+          formContainer.style.transform = "translateY(0)";
+        }, 10);
+      }
+
+      function hideRSVPForm() {
+        const formContainer = document.getElementById("rsvp-form-container");
+        const button = document.querySelector(".rsvp-button");
+
+        // Show the button
+        button.style.display = "block";
+
+        // Hide the form with a smooth animation
+        formContainer.style.display = "none";
+        formContainer.style.opacity = "1";
+        formContainer.style.transform = "translateY(0)";
+
+        setTimeout(() => {
+          formContainer.style.opacity = "0";
+          formContainer.style.transform = "translateY(20px)";
+        }, 10);
+      }
+    </script>
   </body>
 </html>

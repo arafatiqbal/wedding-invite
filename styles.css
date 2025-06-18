@@ -161,7 +161,7 @@ body,
   font-size: 1.6rem;
   font-style: italic;
   margin-bottom: 0.5em;
-  color: #fdf0ab;
+  color: #ffffff;
 }
 .invite-date {
   font-size: 3.2rem;
@@ -171,18 +171,18 @@ body,
 .invite-month {
   font-size: 1.5rem;
   letter-spacing: 0.2em;
-  color: #ffffff;
+  color: #cfc698;
 }
 .invite-time {
   font-size: 1.5rem;
   font-style: italic;
-  color: #ffffff;
+  color: #cfc698;
 }
 .invite-venue {
   font-size: 1.2rem;
   margin-top: 0.5em;
   line-height: 1.5;
-  color: #ffffff;
+  color: #cfc698;
 }
 
 /* RSVP Text */
@@ -473,7 +473,7 @@ html {
 
 .invite-note {
   font-size: 1rem;
-  color: #fcd34d;
+  color: #a88e3c;
   margin-top: 15px;
   font-style: italic;
   opacity: 0.9;

@@ -417,6 +417,15 @@ body::before {
     width: 16px;
     height: 16px;
   }
+
+  .rsvp-form-container {
+    max-width: 100%;
+  }
+
+  .rsvp-form-container iframe {
+    height: 900px;
+    border-radius: 8px;
+  }
 }
 
 /* Footer */
@@ -493,36 +502,24 @@ html {
   transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   opacity: 0;
   transform: translateY(20px);
-  /* max-width: 1200px; */
+  width: 100%;
+  max-width: 900px;
   margin-left: auto;
   margin-right: auto;
-  width: 100%;
-  /* position: relative; */
   z-index: 1;
 }
 
 .rsvp-form-container iframe {
   border-radius: 12px;
-  /* box-shadow: 0 8px 25px rgb a(0, 0, 0, 0.15); */
-  width: 100%;
-  height: auto;
-  min-height: 548px;
+  box-shadow: 0 4px 20px rgba(139, 69, 83, 0.15);
+  width: 450px;
+  border: none;
+  background: white;
 }
 
 .checkmark-icon {
   width: 16px;
   height: 16px;
-}
-
-.rsvp-form-container {
-  max-width: 125vw;
-  margin-top: 20px;
-}
-
-.rsvp-form-container iframe {
-  width: 100vw;
-  min-height: 1000px;
-  border-radius: 10px;
 }
 
 .invite-note {

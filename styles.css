@@ -119,13 +119,13 @@ body::before {
 }
 
 .invite-card {
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(10px);
   box-shadow: 0 8px 32px rgba(139, 69, 83, 0.12),
     0 2px 8px rgba(139, 69, 83, 0.08);
   border-radius: 20px;
-  padding: 50px 40px;
-  max-width: 520px;
+  padding: 55px 45px;
+  max-width: 540px;
   width: 100%;
   margin: 0 auto;
   display: flex;
@@ -150,6 +150,19 @@ body::before {
   display: none !important;
 }
 
+.bismillah-text {
+  font-family: "Cormorant", serif;
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: #7d5a63;
+  text-align: center;
+  line-height: 1.7;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  opacity: 0.9;
+}
+
 .bismillah-img {
   display: block;
   max-width: 80%;
@@ -157,6 +170,7 @@ body::before {
   filter: brightness(0) saturate(100%) invert(26%) sepia(25%) saturate(1478%)
     hue-rotate(304deg) brightness(90%) contrast(88%);
   opacity: 0.9;
+  margin-bottom: 25px;
 }
 
 /* Remove .bismillah-arabic style if not needed */
@@ -174,45 +188,103 @@ body::before {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.2em;
-  margin-bottom: 18px;
+  gap: 0.3em;
+  margin-bottom: 25px;
 }
 .name {
-  font-family: "Playfair Display", serif;
-  font-size: 2.8rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
+  font-family: "Great Vibes", cursive;
+  font-size: 3.5rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
   color: #8b4553;
   text-shadow: 0 1px 2px rgba(139, 69, 83, 0.1);
+  line-height: 1.2;
+}
+.and-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin: 0.5em 0;
+  width: 100%;
+  justify-content: center;
+}
+.and-line {
+  flex: 0 0 70px;
+  height: 1.5px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    #8b4553 20%,
+    #8b4553 80%,
+    transparent
+  );
+  opacity: 0.4;
 }
 .and {
-  font-family: "Great Vibes", cursive;
-  font-size: 2.1rem;
-  color: #ba8895;
-  margin: 0.2em 0;
+  font-family: "Cormorant", serif;
+  font-size: 1.6rem;
+  color: #8b4553;
   font-style: italic;
+  font-weight: 300;
+  flex-shrink: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+.parent-names {
+  font-family: "Playfair Display", serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #7d5a63;
+  letter-spacing: 0.12em;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  opacity: 0.92;
+  text-transform: uppercase;
+}
+
+.parent-names strong {
+  font-family: "Playfair Display", serif;
+  font-weight: 600;
+  color: #6b4a52;
+  letter-spacing: 0.08em;
 }
 .invite-details {
   font-family: "Playfair Display", serif;
   color: #5a3940;
-  margin-top: 15px;
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.4em;
+  gap: 0.3em;
 }
 .invite-sub {
-  font-size: 1.3rem;
+  font-size: 1.15rem;
   font-style: italic;
+  font-weight: 400;
   margin-bottom: 0.5em;
   color: #6b4a52;
+  line-height: 1.6;
+  letter-spacing: 0.02em;
 }
 .invite-date {
-  font-size: 1.8rem;
-  font-weight: 700;
+  font-size: 1.9rem;
+  font-weight: 600;
   letter-spacing: 0.08em;
   color: #8b4553;
-  margin: 0.2em 0;
+  margin: 0.5em 0 0.3em 0;
+  position: relative;
+  padding-bottom: 0.6em;
+}
+.invite-date::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #ba8895, transparent);
+  opacity: 0.5;
 }
 .invite-month {
   font-size: 1.2rem;
@@ -221,51 +293,66 @@ body::before {
   font-style: italic;
 }
 .invite-time {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-style: italic;
-  color: #ba8895;
-  margin: 0.1em 0;
+  font-weight: 500;
+  color: #8b4553;
+  margin: 0.3em 0 0.5em 0;
+  letter-spacing: 0.05em;
 }
 .invite-venue {
-  font-size: 1rem;
+  font-size: 1.05rem;
   margin-top: 0.6em;
-  line-height: 1.6;
+  margin-bottom: 0.4em;
+  line-height: 1.8;
   color: #7d5a63;
   text-align: center;
+  font-weight: 400;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.invite-venue:hover {
+  color: #8b4553;
+  text-decoration: underline;
+  transform: scale(1.02);
 }
 
 /* RSVP Text */
 .rsvp-text {
   font-family: "Playfair Display", serif;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   color: #5a3940;
-  margin-top: 25px;
-  margin-bottom: 15px;
+  margin-top: 28px;
+  margin-bottom: 16px;
   font-style: italic;
-  letter-spacing: 0.05em;
+  font-weight: 400;
+  letter-spacing: 0.03em;
 }
 
 /* RSVP Button */
 .rsvp-button {
-  background: linear-gradient(135deg, #5a3940 0%, #8b4553 100%);
+  background: linear-gradient(135deg, #8b4553 0%, #a05965 100%);
   color: #ffffff;
-  border: 2px solid rgba(216, 170, 149, 0.5);
-  padding: 12px 24px;
+  border: 2px solid rgba(139, 69, 83, 0.3);
+  padding: 14px 30px;
   font-family: "Playfair Display", serif;
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 600;
-  border-radius: 10px;
+  border-radius: 12px;
   cursor: pointer;
   margin-top: 0;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  box-shadow: 0 6px 20px rgba(139, 69, 83, 0.25);
-  letter-spacing: 0.05em;
+  box-shadow: 0 6px 20px rgba(139, 69, 83, 0.2);
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   position: relative;
   overflow: hidden;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
 }
 
 .checkmark-icon {
@@ -292,10 +379,10 @@ body::before {
 }
 
 .rsvp-button:hover {
-  transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 10px 25px rgba(139, 69, 83, 0.35);
-  background: linear-gradient(135deg, #c99985 0%, #a87785 100%);
-  border-color: rgba(216, 170, 149, 0.7);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 10px 30px rgba(139, 69, 83, 0.3);
+  background: linear-gradient(135deg, #a05965 0%, #b86875 100%);
+  border-color: rgba(216, 170, 149, 0.5);
 }
 
 .rsvp-button:hover .checkmark-icon {
@@ -375,18 +462,31 @@ body::before {
     max-width: 90vw;
     padding: 40px 30px;
   }
+  .bismillah-text {
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+  }
   .bismillah-svg svg {
     width: 60px;
     height: 40px;
   }
   .name {
-    font-size: 2.2rem;
+    font-size: 2.8rem;
+  }
+  .and-container {
+    gap: 10px;
+  }
+  .and-line {
+    flex: 0 0 40px;
   }
   .and {
-    font-size: 1.8rem;
+    font-size: 1.3rem;
   }
   .invite-sub {
-    font-size: 1.1rem;
+    font-size: 1rem;
+  }
+  .parent-names {
+    font-size: 0.9rem;
   }
   .invite-date {
     font-size: 1.6rem;
@@ -408,8 +508,8 @@ body::before {
   }
 
   .rsvp-button {
-    padding: 12px 24px;
-    font-size: 1rem;
+    padding: 13px 26px;
+    font-size: 0.9rem;
     border-radius: 10px;
   }
 
@@ -523,12 +623,27 @@ html {
 }
 
 .invite-note {
-  font-size: 1rem;
+  font-size: 1.05rem;
   color: #8b4553;
-  margin-top: 15px;
+  margin-top: 18px;
+  margin-bottom: 5px;
   font-style: italic;
-  opacity: 0.9;
-  letter-spacing: 0.02em;
+  font-weight: 500;
+  opacity: 0.92;
+  letter-spacing: 0.03em;
+  position: relative;
+  padding-top: 0.8em;
+}
+.invite-note::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #ba8895, transparent);
+  opacity: 0.5;
 }
 
 .contact-info {
